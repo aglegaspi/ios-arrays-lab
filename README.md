@@ -219,7 +219,7 @@ Iterate through `thirdListOfNumbers`, and print out the sum of all the even numb
 var sumOfEvens = 0
 
 for n in thirdListOfNumbers {
-    if n & 2 == 0 {
+    if n % 2 == 0 {
         sumOfEvens += n
     }
 }
