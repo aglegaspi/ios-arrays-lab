@@ -53,9 +53,21 @@ Print out how many non-whitespace characters are in `myString`:
 
 `let myString = "This is good practice with Strings!"`
 
+```swift
+
+let trimString = myString.trimmingCharacters(in: .whitespaces).count
+
+```
+
 Iterate through the array below. For each sentence, print out how many non-whitespace characters are in it.
 
 `let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]`
+
+```swift 
+
+
+
+```
 
 
 ## Question 5
@@ -65,6 +77,16 @@ Iterate through `garden` and place any 🌷 that you find into the `basket`. Rep
 ```swift
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
+
+my solution:
+
+for (index,value) in garden.enumerated() where value == "🌷" {
+    basket.append(value)
+    garden[index] = "dirt"
+}
+print(basket)
+print(garden)
+
 ```
 
 ## Question 6
@@ -140,6 +162,14 @@ let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int
 Iterate through `secondListOfNumbers`, and print out all the odd numbers.
 
 `var secondListOfNumbers = [19,13,14,19,101,10000,141,404]`
+
+```swift 
+
+for n in secondListOfNumbers where n % 2 == 1 {
+    print(n)
+}
+
+```
 
 
 ## Question 11
