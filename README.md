@@ -34,6 +34,18 @@ Iterate through the array below. For each state, print out the name of the state
 
 `let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]`
 
+```swift
+
+for s in moreStates {
+    if s != "Hawaii" && s != "Alaska" {
+        print("\(s): is in the continental United States")
+    } else {
+        print("\(s): is NOT in the continental United States")
+    }
+}
+
+```
+
 
 ## Question 4
 
