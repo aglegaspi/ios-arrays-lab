@@ -271,12 +271,19 @@ print(noDupeList)
 
 ```
 
-## Question 15
+## Question 15 √
 
 Find the second smallest number in an Array of Ints
 
 `let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int($0)}`
 
+```swift
+
+let sortArr = arrayOfNumbers.sorted()
+let secondSmNum = sortArr[1]
+print(secondSmNum)
+
+```
 
 ## Question 16
 
