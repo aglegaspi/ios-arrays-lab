@@ -65,6 +65,10 @@ Iterate through the array below. For each sentence, print out how many non-white
 
 ```swift 
 
+for (_, value) in myFavoriteQuotes.enumerated() {
+    let charNWCount = value.replacingOccurrences(of: " ", with: "").count
+        print(charNWCount)
+}
 
 
 ```
