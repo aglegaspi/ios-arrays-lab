@@ -227,7 +227,7 @@ print(sumOfEvens)
 
 ```
 
-## Question 13
+## Question 13 √
 
 Append every Int that appears in both `listOne` and `listTwo` to the `sharedElements` array. Then print **how many Ints** are shared.
 
@@ -237,14 +237,38 @@ var listTwo = [18, 94, 48, 6, 42, 68, 79, 76, 13, 7]
 var sharedElements = [Int]()
 ```
 
+```swift
 
-## Question 14
+for i in listOne {
+    for j in listTwo {
+        if i == j {
+            sharedElements.append(i)
+        }
+    }
+}
+print(sharedElements.count)
+
+
+```
+
+
+## Question 14 √
 
 Write code such that `noDupeList` has all the same Ints as `dupeFriendlyList`, but has no more than one of each Int.
 
 ```swift
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
+```
+
+```swift
+
+for i in dupeFriendlyList where noDupeList.contains(i) == false {
+    noDupeList.append(i)
+}
+print(noDupeList)
+
+
 ```
 
 ## Question 15
