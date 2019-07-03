@@ -208,12 +208,24 @@ let result = thirdListOfNumbers.reduce(0,+)
 ````
 
 
-## Question 12
+## Question 12 √
 
 Iterate through `thirdListOfNumbers`, and print out the sum of all the even numbers.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
 
+```swift 
+
+var sumOfEvens = 0
+
+for n in thirdListOfNumbers {
+    if n & 2 == 0 {
+        sumOfEvens += n
+    }
+}
+print(sumOfEvens)
+
+```
 
 ## Question 13
 
