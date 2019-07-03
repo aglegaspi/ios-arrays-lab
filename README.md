@@ -2,7 +2,7 @@
 
 Fork and clone this repo. On your fork, answer and commit the follow questions. When you are finished, submit the link to your repo on Canvas.
 
-## Question 1
+## Question 1 √
 
 Create an array of strings called `colors` that contain "orange", "red", "yellow", "turquoise", and "lavender".
 
@@ -15,7 +15,7 @@ print("\(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colo
 
 ```
 
-## Question 2
+## Question 2 √
 
 Remove "Illinois" and "Kansas" from the array below.
 
@@ -28,7 +28,7 @@ westernStates.popLast()
 print(westernStates)
 ```
 
-## Question 3
+## Question 3 √
 
 Iterate through the array below. For each state, print out the name of the state, a colon, and whether it is or is not **in the continental United States.**
 
@@ -47,7 +47,7 @@ for s in moreStates {
 ```
 
 
-## Question 4
+## Question 4 √
 
 Print out how many non-whitespace characters are in `myString`:
 
@@ -74,16 +74,15 @@ for (_, value) in myFavoriteQuotes.enumerated() {
 ```
 
 
-## Question 5
+## Question 5 √
 
 Iterate through `garden` and place any 🌷 that you find into the `basket`. Replace any 🌷 that you pick up with `"dirt"`. Then print how many 🌷 are in your `basket`.
 
 ```swift
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
-
-my solution:
-
+```
+```swift
 for (index,value) in garden.enumerated() where value == "🌷" {
     basket.append(value)
     garden[index] = "dirt"
@@ -139,7 +138,7 @@ target = 3
 ```
 
 
-## Question 8
+## Question 8√
 
 Find the largest value in an array of Int.  Do not use the built-in `max()` method.
 
@@ -147,6 +146,15 @@ Find the largest value in an array of Int.  Do not use the built-in `max()` meth
 let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int($0)}
 
 //This creates an array of 100 numbers in between 0 and 200.  For now, you don't need to worry about how it does that.
+```
+```swift
+var maxNum = 0
+
+for i in arrayOfNumbers where i > maxNum {
+    maxNum = i
+}
+print(maxNum)
+
 ```
 
 
@@ -158,6 +166,17 @@ Find the smallest value in an array of Int.  Do not use the built in min() metho
 let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int($0)}
 
 //This creates an array of 100 numbers in between 0 and 200.  For now, you don't need to worry about how it does that.
+```
+```swift
+
+var minNum = arrayOfNumbers.max()
+
+for i in arrayOfNumbers where i < minNum! {
+    minNum = i
+}
+print(minNum!)
+
+
 ```
 
 
