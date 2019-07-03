@@ -180,7 +180,7 @@ print(minNum!)
 ```
 
 
-## Question 10
+## Question 10 √
 
 Iterate through `secondListOfNumbers`, and print out all the odd numbers.
 
@@ -195,11 +195,17 @@ for n in secondListOfNumbers where n % 2 == 1 {
 ```
 
 
-## Question 11
+## Question 11√
 
 Iterate through `thirdListOfNumbers`, and print out the sum.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
+
+```swift
+
+let result = thirdListOfNumbers.reduce(0,+)
+
+````
 
 
 ## Question 12
