@@ -310,7 +310,8 @@ var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,3
 ```
 ```swift
 
-for i i
+let dups = Dictionary(grouping: someRepeatsAgain, by: {$0}).filter { $1.count > 1 }.keys.sorted()
+print(dups)
 
 ```
 
