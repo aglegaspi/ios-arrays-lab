@@ -138,7 +138,7 @@ target = 3
 ```
 
 
-## Question 8√
+## Question 8 √
 
 Find the largest value in an array of Int.  Do not use the built-in `max()` method.
 
@@ -158,7 +158,7 @@ print(maxNum)
 ```
 
 
-## Question 9
+## Question 9 √
 
 Find the smallest value in an array of Int.  Do not use the built in min() method.
 
@@ -301,7 +301,7 @@ print(sum)
 
 ```
 
-## Question 17
+## Question 17 √
 
 Make an array that contains all elements that appear **more than twice** in `someRepeatsAgain`.
 
@@ -315,7 +315,7 @@ print(dups)
 
 ```
 
-## Question 18
+## Question 18 √
 
 Identify if there are 3 integers that sum to 10 in the following array. If so, print them as a triplet. If there are multiple triplets, print all possible triplets.
 
@@ -345,7 +345,7 @@ input: `["apes", "abba", "apple"]`
 output: `"abba"`
 
 
-## Question 20
+## Question 20 √
 
 Given an Array of Arrays of Ints, find the Array of Ints with the largest sum:
 
@@ -372,7 +372,7 @@ print(result)
 ```
 
 
-## Question 21
+## Question 21 √
 
 Given an Array of Tuples of type `(Int, Int)`, create an array containing all the tuples where the first Int is equal to the second Int.
 
@@ -392,7 +392,7 @@ print(tupleArray)
 
 ```
 
-## Question 22
+## Question 22 √
 
 Given an Array of Bools, make a variable called `allAreTrue` that is true if all of the Bools are true and false if any of them are false.
 
@@ -446,7 +446,7 @@ Input: `let arr: [Character] = ["a", "p","P","l","E"," ","S","a","u","C,"e"]`
 Output: `"ApLeAuE"`
 
 
-## Question 25
+## Question 25 √
 
 Print out each element in `myMatrix`
 
@@ -460,7 +460,7 @@ for element in myMatrix {
 
 ```
 
-## Question 26
+## Question 26 √
 
 Print out the sum of the diagonals of `myMatrix`.
 
