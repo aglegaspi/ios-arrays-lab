@@ -353,6 +353,24 @@ Input: `[[2,4,1],[3,0],[9,3]]`
 
 Output: `[9,3]`
 
+```swift
+
+let input = [[2,4,1],[3,0],[9,3]]
+var result = [Int]()
+var largSum = 0
+
+for array in input {
+    var sum = array.reduce(0,+)
+
+    if sum > largSum {
+        largSum = sum
+        result = array
+    }
+}
+print(result)
+
+```
+
 
 ## Question 21
 
@@ -362,6 +380,17 @@ Input: `[(4,2), (-3,-3), (1,1), (3,9)]`
 
 Output: `[(-3,-3), (1,1)]`
 
+```swift
+
+let arrTups = [(4,2), (-3,-3), (1,1), (3,9)]
+var tupleArray: [(Int,Int)] = []
+
+for tuple in arrTups where tuple.0 == tuple.1 {
+    tupleArray.append(tuple)
+}
+print(tupleArray)
+
+```
 
 ## Question 22
 
@@ -371,6 +400,33 @@ Input: `[true, false, true, true]`
 
 Output: `false`
 
+```swift
+
+let arrBools = [true, true, true, true]
+
+var allAreTrue: [Bool] = []
+var trueCount = 0
+
+for b in arrBools {
+
+    if b == false {
+        allAreTrue = [false]
+    break
+    }
+
+    if b == true {
+        trueCount += 1
+    }
+
+    if trueCount == arrBools.count {
+        allAreTrue = [true]
+    }
+
+}
+print(allAreTrue)
+
+
+```
 
 ## Question 23
 
@@ -396,6 +452,13 @@ Print out each element in `myMatrix`
 
 `var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]`
 
+```swift
+
+for element in myMatrix {
+    print(element)
+}
+
+```
 
 ## Question 26
 
@@ -403,6 +466,13 @@ Print out the sum of the diagonals of `myMatrix`.
 
 `var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]`
 
+```swift
+
+for element in myMatrix {
+    print(element.reduce(0,+))
+}
+
+```
 
 ## Question 27
 
@@ -411,3 +481,8 @@ Using for loops, rotate `matrixToRotate` 90 degrees.
 var matrixToRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 ![Matrix Rotation](images/rotated_matrix.jpeg)
+
+```swift
+
+
+```
