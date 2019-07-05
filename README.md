@@ -114,7 +114,7 @@ print(battingLineup)
 
 ```
 
-## Question 7
+## Question 7 √
 
 Given an array of Ints, find out if it contains a target number.  
 
@@ -125,6 +125,16 @@ Given an array of Ints, find out if it contains a target number.
 var numbers: [Int]
 
 let target: Int = 32
+```
+
+```swift
+
+for n in numbers {
+    if n == target {
+        print("found the target number \(target)")
+    }
+}
+
 ```
 
 Ex.1
