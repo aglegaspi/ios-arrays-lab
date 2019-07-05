@@ -121,22 +121,6 @@ Given an array of Ints, find out if it contains a target number.
 (The built-in `contains(_:)` function will do this, but you aren't allowed to use it for this exercise.)
 
 
-```swift
-var numbers: [Int]
-
-let target: Int = 32
-```
-
-```swift
-
-for n in numbers {
-    if n == target {
-        print("found the target number \(target)")
-    }
-}
-
-```
-
 Ex.1
 
 ```swift
@@ -155,6 +139,23 @@ numbers = [32459,2,4,5,1,4,2,1]
 target = 3
 
 //false
+```
+
+
+```swift
+var numbers: [Int]
+
+let target: Int = 32
+```
+
+```swift
+
+for n in numbers {
+if n == target {
+print("found the target number \(target)")
+}
+}
+
 ```
 
 
@@ -364,6 +365,22 @@ input: `["apes", "abba", "apple"]`
 
 output: `"abba"`
 
+```swift
+
+for str in input {
+
+    for letter in str where String(letter).contains("a") {
+            counter += 1
+        }
+        counterArr.append(counter)
+        counter = 0
+}
+
+print(input[counterArr.max()! - 1])
+
+
+```
+
 
 ## Question 20 √
 
@@ -455,6 +472,11 @@ Given an Array of Ranges of Ints, create an array that has all the values from a
 Input: `[0..<3 , 2..<10, -4..<6, 13..<14]`
 
 Output: `[-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,13]`
+
+```swift
+
+
+```
 
 
 ## Question 24
