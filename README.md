@@ -92,7 +92,7 @@ print(garden)
 
 ```
 
-## Question 6
+## Question 6 √
 
 The below array represents an unfinished batting lineup for a baseball team. **You, the coach,** need to make some last minute changes:
 
@@ -103,6 +103,16 @@ The below array represents an unfinished batting lineup for a baseball team. **Y
 
 `var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]`
 
+```swift
+
+battingLineup += ["Suzuki"]
+battingLineup[1] = "Tejada"
+battingLineup[5] = "Guerrero"
+battingLineup.remove(at: 0)
+battingLineup += ["Reyes"]
+print(battingLineup)
+
+```
 
 ## Question 7
 
