@@ -357,7 +357,7 @@ for i in 0...tripleSumArr.count - 3 {
 ```
 
 
-## Question 19
+## Question 19 √
 
 Given an array of Strings, find the the String with the most "a"s in it.
 
@@ -465,7 +465,7 @@ print(allAreTrue)
 
 ```
 
-## Question 23
+## Question 23 √
 
 Given an Array of Ranges of Ints, create an array that has all the values from all the ranges in order from smallest to greatest with no duplicates.
 
@@ -475,6 +475,16 @@ Output: `[-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,13]`
 
 ```swift
 
+var output = [Int]()
+
+for range in input {
+    for num in range where !output.contains(num) {
+        output += [num]
+    }
+}
+
+output.sort()
+print(output)
 
 ```
 
