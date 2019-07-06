@@ -539,9 +539,37 @@ Print out the sum of the diagonals of `myMatrix`.
 
 ```swift
 
-for element in myMatrix {
-    print(element.reduce(0,+))
+var sum1 = 0
+var sum2 = 0
+var sum3 = 0
+
+for arr in myMatrix {
+    for (index, num) in arr.enumerated() {
+
+        if index == 0 {
+            sum1 += num
+        }
+
+        if index == 1 {
+            sum2 += num
+        }
+
+        if index == 2 {
+            sum3 += num
+        }
+
+
+    }
 }
+print(sum1)
+print(sum2)
+print(sum3)
+
+```
+
+```swift
+
+
 
 ```
 
