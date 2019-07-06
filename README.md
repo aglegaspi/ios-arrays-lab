@@ -525,8 +525,12 @@ Print out each element in `myMatrix`
 
 ```swift
 
-for element in myMatrix {
-    print(element)
+var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+
+for arr in myMatrix {
+    for elem in arr {
+        print(elem)
+    }
 }
 
 ```
