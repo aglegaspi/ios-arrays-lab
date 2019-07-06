@@ -489,13 +489,32 @@ print(output)
 ```
 
 
-## Question 24
+## Question 24 √
 
 Given an array of Characters, create a String ignoring and uppercase Characters and spaces.  Then uppercase every other character of the String.
 
 Input: `let arr: [Character] = ["a", "p","P","l","E"," ","S","a","u","C,"e"]`
 
 Output: `"ApLeAuE"`
+
+```swift
+
+let arr: [Character] = ["a","p","P","l","E"," ","S","a","u","C","e"]
+var output = String()
+var count = 1
+
+for char in arr where char != " " && char != Character(char.uppercased()) {
+    if count % 2 == 0 {
+        output += String(char)
+    } else {
+        output += String(char.uppercased())
+    }
+    count += 1
+}
+print(output)
+
+
+```
 
 
 ## Question 25 √
