@@ -577,7 +577,7 @@ print(sum3)
 
 ```
 
-## Question 27
+## Question 27 √
 
 Using for loops, rotate `matrixToRotate` 90 degrees.
 
@@ -586,6 +586,63 @@ var matrixToRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 ![Matrix Rotation](images/rotated_matrix.jpeg)
 
 ```swift
+
+var matrixToRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+// declare a variable and initialize it with arrays of Ints
+var matrix90: Array = [[0,0,0], [0,0,0], [0,0,0]]
+
+for (index, array) in matrixToRotate.enumerated() {
+    
+    //values in the first array each become the last value in each array in the ouput
+    if index == 0 {
+        // declare variable count to iterations
+        var count = 0
+        
+        //loop through each number in the array
+        for number in array {
+            // as long as count is less than three run this code block
+            if count < 3 {
+                // use count for first subscript and set the second with a set value
+                matrix90[count][2] = number
+                // now increase the value of count
+                count += 1
+            }
+        }
+        //reinitialize the count variable
+        count = 0
+    }
+    
+    //values in the second array each become the middle value in each array in the ouput. code is repeated. commented changes.
+    if index == 1 {
+        var count = 0
+        
+        for number in array {
+            if count < 3 {
+                //second subscript notes the middle of the array
+                matrix90[count][1] = number
+                count += 1
+            }
+        }
+        count = 0
+    }
+    
+    //values in the last array each become the first value in each array in the ouput
+    if index == 2 {
+        var count = 0
+        
+        for number in array {
+            if count < 3 {
+                //second subscript notes the first index of the array
+                matrix90[count][0] = number
+                count += 1
+            }
+        }
+        count = 0
+    }
+}
+// output is [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+print(matrix90)
 
 
 ```
