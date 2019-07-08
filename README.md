@@ -11,6 +11,7 @@ Then, using array subscripting and string interpolation, print out the String `"
 ```swift
 
 let colors = ["orange","red","yellow","turquoise","lavender"]
+
 print("\(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colors")
 
 ```
@@ -65,9 +66,13 @@ Iterate through the array below. For each sentence, print out how many non-white
 
 ```swift 
 
+let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
+
 for (_, value) in myFavoriteQuotes.enumerated() {
+ß
     let charNWCount = value.replacingOccurrences(of: " ", with: "").count
-        print(charNWCount)
+    
+    print(charNWCount)
 }
 
 
@@ -83,10 +88,12 @@ var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","di
 var basket = [String]()
 ```
 ```swift
+
 for (index,value) in garden.enumerated() where value == "🌷" {
     basket.append(value)
     garden[index] = "dirt"
 }
+
 print(basket)
 print(garden)
 
@@ -105,11 +112,14 @@ The below array represents an unfinished batting lineup for a baseball team. **Y
 
 ```swift
 
+var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]
+
 battingLineup += ["Suzuki"]
 battingLineup[1] = "Tejada"
 battingLineup[5] = "Guerrero"
 battingLineup.remove(at: 0)
 battingLineup += ["Reyes"]
+
 print(battingLineup)
 
 ```
@@ -143,17 +153,16 @@ target = 3
 
 
 ```swift
+
+let numbers = [4,2,6,73,32,4,2,1]
+
 var numbers: [Int]
-
 let target: Int = 32
-```
-
-```swift
 
 for n in numbers {
-if n == target {
-print("found the target number \(target)")
-}
+    if n == target {
+        print("found the target number \(target)")
+    }
 }
 
 ```
@@ -169,6 +178,9 @@ let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int
 //This creates an array of 100 numbers in between 0 and 200.  For now, you don't need to worry about how it does that.
 ```
 ```swift
+
+let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int($0)}
+
 var maxNum = 0
 
 for i in arrayOfNumbers where i > maxNum {
@@ -188,14 +200,17 @@ let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int
 
 //This creates an array of 100 numbers in between 0 and 200.  For now, you don't need to worry about how it does that.
 ```
+
 ```swift
 
-var minNum = arrayOfNumbers.max()
+let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int($0)}
 
-for i in arrayOfNumbers where i < minNum! {
+var minNum = arrayOfNumbers.max() ?? 0
+
+for i in arrayOfNumbers where i < minNum {
     minNum = i
 }
-print(minNum!)
+print(minNum)
 
 
 ```
@@ -208,6 +223,8 @@ Iterate through `secondListOfNumbers`, and print out all the odd numbers.
 `var secondListOfNumbers = [19,13,14,19,101,10000,141,404]`
 
 ```swift 
+
+var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 
 for n in secondListOfNumbers where n % 2 == 1 {
     print(n)
@@ -224,6 +241,7 @@ Iterate through `thirdListOfNumbers`, and print out the sum.
 
 ```swift
 
+var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 let result = thirdListOfNumbers.reduce(0,+)
 
 ````
@@ -237,6 +255,7 @@ Iterate through `thirdListOfNumbers`, and print out the sum of all the even numb
 
 ```swift 
 
+var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 var sumOfEvens = 0
 
 for n in thirdListOfNumbers {
@@ -278,17 +297,16 @@ print(sharedElements.count)
 Write code such that `noDupeList` has all the same Ints as `dupeFriendlyList`, but has no more than one of each Int.
 
 ```swift
+
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
-```
 
-```swift
+// filter WHERE Ints are NOT noDupeList and then append that value to the noDupeList array.
+for i in dupeFriendlyList where !noDupeList.contains(i) {
 
-for i in dupeFriendlyList where noDupeList.contains(i) == false {
     noDupeList.append(i)
 }
 print(noDupeList)
-
 
 ```
 
@@ -296,9 +314,9 @@ print(noDupeList)
 
 Find the second smallest number in an Array of Ints
 
-`let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int($0)}`
-
 ```swift
+
+let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int($0)}
 
 let sortArr = arrayOfNumbers.sorted()
 let secondSmNum = sortArr[1]
@@ -328,8 +346,6 @@ Make an array that contains all elements that appear **more than twice** in `som
 
 ```swift
 var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11,5,39,13,17,43,1,1,15,25]
-```
-```swift
 
 let dups = Dictionary(grouping: someRepeatsAgain, by: {$0}).filter { $1.count > 1 }.keys.sorted()
 print(dups)
@@ -344,14 +360,19 @@ Identify if there are 3 integers that sum to 10 in the following array. If so, p
 
 ```swift 
 
+var tripleSumArr = [-20,-14,-8,-5,-3,-2,1,2,3,4,9,15,20,30]
+
 for i in 0...tripleSumArr.count - 3 {
+
     for j in 1...tripleSumArr.count - 2 {
+    
         for k in 2...tripleSumArr.count - 1 {
+        
             if tripleSumArr[i] + tripleSumArr[j] + tripleSumArr[k] == 10 {
                 print("\(tripleSumArr[i]) \(tripleSumArr[j]) \(tripleSumArr[k])")
-                }
             }
         }
+    }
 }
 
 ```
@@ -362,21 +383,24 @@ for i in 0...tripleSumArr.count - 3 {
 Given an array of Strings, find the the String with the most "a"s in it.
 
 input: `["apes", "abba", "apple"]`
-
 output: `"abba"`
 
 ```swift
 
-for str in input {
+let input19 = ["apes", "abba", "apple"]
+var counter = 0
+var counterArr = [Int]()
 
+for str in input19 {
+    
     for letter in str where String(letter).contains("a") {
-            counter += 1
-        }
-        counterArr.append(counter)
-        counter = 0
+        counter += 1
+    }
+    counterArr.append(counter)
+    counter = 0
 }
 
-print(input[counterArr.max()! - 1])
+print(input19[counterArr.max()! - 1])
 
 
 ```
@@ -387,24 +411,23 @@ print(input[counterArr.max()! - 1])
 Given an Array of Arrays of Ints, find the Array of Ints with the largest sum:
 
 Input: `[[2,4,1],[3,0],[9,3]]`
-
 Output: `[9,3]`
 
 ```swift
 
-let input = [[2,4,1],[3,0],[9,3]]
-var result = [Int]()
+let input20 = [[2,4,1],[3,0],[9,3]]
+var result20 = [Int]()
 var largSum = 0
 
-for array in input {
+for array in input20 {
     var sum = array.reduce(0,+)
 
     if sum > largSum {
         largSum = sum
-        result = array
+        result20 = array
     }
 }
-print(result)
+print(result20)
 
 ```
 
@@ -414,7 +437,6 @@ print(result)
 Given an Array of Tuples of type `(Int, Int)`, create an array containing all the tuples where the first Int is equal to the second Int.
 
 Input: `[(4,2), (-3,-3), (1,1), (3,9)]`
-
 Output: `[(-3,-3), (1,1)]`
 
 ```swift
@@ -475,16 +497,20 @@ Output: `[-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,13]`
 
 ```swift
 
-var output = [Int]()
+let input23 = [0..<3 , 2..<10, -4..<6, 13..<14]
+var output23 = [Int]()
 
-for range in input {
-    for num in range where !output.contains(num) {
-        output += [num]
+for range in input23 {
+
+    // find WHERE number is not in the output then add it to the array 
+    
+    for num in range where !output23.contains(num) {
+        output23 += [num]
     }
 }
 
-output.sort()
-print(output)
+output23.sort()
+print(output23)
 
 ```
 
@@ -494,25 +520,28 @@ print(output)
 Given an array of Characters, create a String ignoring and uppercase Characters and spaces.  Then uppercase every other character of the String.
 
 Input: `let arr: [Character] = ["a", "p","P","l","E"," ","S","a","u","C,"e"]`
-
 Output: `"ApLeAuE"`
 
 ```swift
 
 let arr: [Character] = ["a","p","P","l","E"," ","S","a","u","C","e"]
+
 var output = String()
 var count = 1
 
+// iterate & filter out spaces and uppercase letters
 for char in arr where char != " " && char != Character(char.uppercased()) {
+
+
     if count % 2 == 0 {
         output += String(char)
     } else {
+    
         output += String(char.uppercased())
     }
     count += 1
 }
 print(output)
-
 
 ```
 
@@ -525,9 +554,10 @@ Print out each element in `myMatrix`
 
 ```swift
 
-var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+var myMatrix1 = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
 
-for arr in myMatrix {
+for arr in myMatrix1 {
+    
     for elem in arr {
         print(elem)
     }
@@ -543,28 +573,33 @@ Print out the sum of the diagonals of `myMatrix`.
 
 ```swift
 
+var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+
+//declare a sum variable for each
 var sum1 = 0
 var sum2 = 0
 var sum3 = 0
 
-for arr in myMatrix {
-    for (index, num) in arr.enumerated() {
 
+for arr in myMatrix {
+    
+    for (index, num) in arr.enumerated() {
+    
+        // if the index is zero we will add each value to that sum
         if index == 0 {
             sum1 += num
         }
-
+        // if the index is one we will add each value to that sum
         if index == 1 {
             sum2 += num
         }
-
+        // if the index is two we will add each value to that sum
         if index == 2 {
             sum3 += num
         }
-
-
     }
 }
+
 print(sum1)
 print(sum2)
 print(sum3)
@@ -580,46 +615,37 @@ print(sum3)
 ## Question 27 √
 
 Using for loops, rotate `matrixToRotate` 90 degrees.
-
 var matrixToRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
 ![Matrix Rotation](images/rotated_matrix.jpeg)
 
 ```swift
 
 var matrixToRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
-// declare a variable and initialize it with arrays of Ints
 var matrix90: Array = [[0,0,0], [0,0,0], [0,0,0]]
 
 for (index, array) in matrixToRotate.enumerated() {
     
-    //values in the first array each become the last value in each array in the ouput
+    // when index is zero update each matrix90[index][2] with the values from matrixToRotate[0][0]
+    
     if index == 0 {
-        // declare variable count to iterations
         var count = 0
         
-        //loop through each number in the array
         for number in array {
-            // as long as count is less than three run this code block
             if count < 3 {
-                // use count for first subscript and set the second with a set value
                 matrix90[count][2] = number
-                // now increase the value of count
                 count += 1
             }
         }
-        //reinitialize the count variable
         count = 0
     }
     
-    //values in the second array each become the middle value in each array in the ouput. code is repeated. commented changes.
+    // when index is one update each matrix90[index][1] with the values from matrixToRotate[0][1]
+    
     if index == 1 {
         var count = 0
         
         for number in array {
             if count < 3 {
-                //second subscript notes the middle of the array
                 matrix90[count][1] = number
                 count += 1
             }
@@ -627,13 +653,13 @@ for (index, array) in matrixToRotate.enumerated() {
         count = 0
     }
     
-    //values in the last array each become the first value in each array in the ouput
+    // when index is one update each matrix90[index][0] with the values from matrixToRotate[0][2]
+    
     if index == 2 {
         var count = 0
         
         for number in array {
             if count < 3 {
-                //second subscript notes the first index of the array
                 matrix90[count][0] = number
                 count += 1
             }
@@ -641,7 +667,7 @@ for (index, array) in matrixToRotate.enumerated() {
         count = 0
     }
 }
-// output is [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+
 print(matrix90)
 
 
